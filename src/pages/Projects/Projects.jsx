@@ -12,6 +12,14 @@ const projects = [
     live: "https://gear-up-alpha.vercel.app/",
   },
   {
+    title: "Online Voting Platform",
+    description: "A decentralized, transparent, and secure blockchain voting platform built on Avalanche Fuji Testnet..",
+    img: "https://i.postimg.cc/15vs4MMg/Screenshot-2025-09-08-210108.png",
+    color: "#d4cbd4ff",
+    github: "https://github.com/yatish2026/vote-fuji-flow",
+    live: "https://vote-fuji-flow.netlify.app/",
+  },
+  {
     title: "Pathfinding Visualizer",
     description: "Developed a Pathfinding Visualizer using Dijkstra’s and A algorithms with interactive UI in React for real-time grid-based route simulation.",
     img: "https://i.postimg.cc/9f12jDwD/Screenshot-2025-07-31-171548.png",
@@ -19,7 +27,6 @@ const projects = [
     github: "https://github.com/yatish2026/Pathfinder",
     live: "https://yatish2026.github.io/Pathfinder/",
   },
-
 
   {
     title: "Spotify Clone",
