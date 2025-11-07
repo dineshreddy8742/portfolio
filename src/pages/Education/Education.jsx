@@ -1,44 +1,88 @@
 import React, { useState } from "react";
-import { BookOpen, Calendar, Trophy, Award } from "lucide-react";
-import { motion } from "framer-motion";
+import { BookOpen, Calendar, Trophy, Award, GraduationCap, Target } from "lucide-react";
+import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
+
+// Enhanced Tilt Card Component for Education
+const EducationTiltCard = ({ children, onClick, index }) => {
+  const ref = React.useRef(null);
+  const x = useMotionValue(0.5);
+  const y = useMotionValue(0.5);
+
+  const rotateX = useSpring(useTransform(y, [0, 1], [8, -8]), { stiffness: 100 });
+  const rotateY = useSpring(useTransform(x, [0, 1], [-8, 8]), { stiffness: 100 });
+
+  const handleMouseMove = (e) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width;
+    const py = (e.clientY - rect.top) / rect.height;
+    x.set(px);
+    y.set(py);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0.5);
+    y.set(0.5);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d",
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="transition-transform duration-300 cursor-pointer hover:scale-[1.02]"
+      onClick={onClick}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const educationData = [
   {
-    degree: "Bachelor of Technology(B.Tech) in Information Technology",
-    school: "Sri Venkateswara College of Engineering Technology",
+    degree: "B-Tech, Information Technology",
+    school: "Sri Venkateswara College of Engineering and Technology",
     mascot: "📘",
-    year: "2022-2026",
+    year: "2022 - 2026",
     achievements: [
-      "CGPA: 8.32",
-      "3-times Hackathon Winner",
-      "Finalist – Smart India Hackathon 2024, Govt. of India",
+      "CGPA: 8.37",
+      "3x Hackathon winner",
+      "Winner: Impact X Hackathon (2025) & Bit Bash Hackathon (2025)",
     ],
     skills: ["DSA", "OS", "JAVA", "CN", "DBMS", "AI"],
     description:
       "Gained practical knowledge in software development and problem-solving through projects and coursework, while honing teamwork and communication skills.",
+    onClick: () => console.log("B-Tech Information Technology clicked")
   },
   {
     degree: "Intermediate (MPC)",
-    school: "Government Junior College, Vizianagaram",
+    school: "AP Model Junior College, Rayachoty",
     mascot: "📗",
-    year: "2018-2020",
+    year: "2020-2022",
     achievements: [
-      "GPA: 70%",
-      "Secured 2nd position in a speech competition at the district level",
+      "Percentage: 75%",
+      "Completed MPC with Physics, Chemistry, and Mathematics",
     ],
-    skills: ["Communication & Public Speaking", "Typing"],
+    skills: ["Physics", "Chemistry", "Mathematics", "Analytical Thinking"],
     description:
       "Developed strong analytical and critical thinking skills through comprehensive study of mathematics, physics, and chemistry.",
+    onClick: () => console.log("Intermediate MPC clicked")
   },
   {
     degree: "Secondary School Certificate (SSC)",
-    school: "Zilla Parishad High School",
+    school: "AP Model School, Rayachoty",
     mascot: "📗",
-    year: "2015-2018",
-    achievements: ["GPA: 8.3", "Winner in Science Fair, Maths Olympiad"],
+    year: "2020",
+    achievements: ["Percentage: 90%", "Completed 10th grade with优异 academic performance"],
     skills: ["Maths", "English", "Science", "Social"],
     description:
       "Developed strong analytical thinking, problem-solving skills, and a disciplined learning approach during school years.",
+    onClick: () => console.log("SSC clicked")
   },
 ];
 
@@ -77,7 +121,7 @@ const FloatingEmoji = ({ icon, className, delay = 0 }) => (
   </motion.div>
 );
 
-const EducationSection = () => {
+export default function Education() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
@@ -132,74 +176,75 @@ const EducationSection = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {educationData.map((edu, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm shadow-md ${
-                hoveredIndex === index
-                  ? "border-teal-500 scale-[1.02] shadow-teal-500/30"
-                  : "border-blue-400/20"
-              }`}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <div className="space-y-6">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">{edu.mascot}</span>
-                    <h3 className="text-2xl font-bold text-white">
-                      {edu.degree}
-                    </h3>
+            <EducationTiltCard key={index} onClick={edu.onClick} index={index}>
+              <motion.div
+                variants={cardVariants}
+                className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm shadow-2xl ${
+                  hoveredIndex === index
+                    ? "border-teal-500 scale-[1.02] shadow-teal-500/40"
+                    : "border-blue-400/20"
+                }`}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                whileHover={{ y: -10 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-3">
+                      <span className="text-3xl">{edu.mascot}</span>
+                      <h3 className="text-2xl font-bold text-white">
+                        {edu.degree}
+                      </h3>
+                    </div>
+                    <p className="text-lg text-gray-300 flex items-center gap-2">
+                      <BookOpen className="w-5 h-5 text-teal-500" />
+                      {edu.school}
+                    </p>
+                    <p className="text-gray-400 flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      {edu.year}
+                    </p>
                   </div>
-                  <p className="text-lg text-gray-300 flex items-center gap-2">
-                    <BookOpen className="w-5 h-5 text-teal-500" />
-                    {edu.school}
-                  </p>
-                  <p className="text-gray-400 flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
-                    {edu.year}
-                  </p>
-                </div>
 
-                <p className="text-gray-300 text-sm italic border-l-2 border-teal-500 pl-3">
-                  {edu.description}
-                </p>
+                  <p className="text-gray-300 text-sm italic border-l-4 border-teal-500 pl-3 leading-relaxed">
+                    {edu.description}
+                  </p>
 
-                <div className="space-y-3">
-                  <h4 className="text-sm font-semibold text-white flex items-center gap-2">
-                    <Trophy className="w-4 h-4 text-yellow-500" />
-                    Key Achievements
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {edu.achievements.map((achievement, i) => (
-                      <div
+                  <div className="space-y-3">
+                    <h4 className="text-sm font-semibold text-white flex items-center gap-2">
+                      <Trophy className="w-4 h-4 text-yellow-500" />
+                      Key Achievements
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {edu.achievements.map((achievement, i) => (
+                        <div
+                          key={i}
+                          className="px-3 py-1 rounded-full bg-gradient-to-r from-teal-500/20 to-cyan-500/20 text-teal-400 flex items-center gap-2 text-sm border border-teal-500/30"
+                        >
+                          <Award className="w-4 h-4" />
+                          <span>{achievement}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {edu.skills.map((skill, i) => (
+                      <span
                         key={i}
-                        className="px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 flex items-center gap-2 text-sm"
+                        className="px-3 py-1 text-xs rounded-full bg-gradient-to-r from-blue-500/20 to-indigo-500/20 text-blue-300 border border-blue-500/30"
                       >
-                        <Award className="w-4 h-4" />
-                        <span>{achievement}</span>
-                      </div>
+                        {skill}
+                      </span>
                     ))}
                   </div>
                 </div>
-
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {edu.skills.map((skill, i) => (
-                    <span
-                      key={i}
-                      className="px-2 py-1 text-xs rounded bg-blue-500/10 text-blue-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </EducationTiltCard>
           ))}
         </motion.div>
       </div>
     </section>
   );
-};
-
-export default EducationSection;
+}

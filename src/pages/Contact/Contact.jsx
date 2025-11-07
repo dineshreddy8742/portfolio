@@ -108,43 +108,42 @@ export default function Contact() {
                   {
                     icon: <Mail className="w-6 h-6 text-purple-400" />,
                     title: "Email",
-                    content: "yatish.techie@gmail.com",
+                    content: "palavaladineshkumarreddy17@gmail.com",
                   },
                   {
                     icon: <Phone className="w-6 h-6 text-green-400" />,
                     title: "Phone",
-                    content: "+91-7989479005",
+                    content: "+917989604033",
                   },
                   {
                     icon: <Linkedin className="w-6 h-6 text-blue-400" />,
                     title: "LinkedIn",
                     content:
-                      "https://www.linkedin.com/in/yatish-gottapu/",
-                    link: true,
-                  },
-                  {
-                    icon: <Github className="w-6 h-6 text-gray-400" />,
-                    title: "LeetCode",
-                    content: "https://leetcode.com/u/Yatish_geek/",
+                      "https://www.linkedin.com/in/palavala-dinesh-kumar-reddy/",
                     link: true,
                   },
                   {
                     icon: <Github className="w-6 h-6 text-gray-400" />,
                     title: "GitHub",
-                    content: "https://github.com/yatish2026",
+                    content: "https://github.com/dineshreddy8742?tab=repositories",
                     link: true,
                   },
                   {
-                    icon: <Globe className="w-6 h-6 text-yellow-400" />,
+                    icon: <MapPin className="w-6 h-6 text-pink-400" />,
+                    title: "LeetCode",
+                    content: "https://leetcode.com/u/chintuvignu17/",
+                    link: true,
+                  },
+                  {
+                    icon: <MapPin className="w-6 h-6 text-pink-400" />,
                     title: "GeeksforGeeks",
-                    content:
-                      "https://www.geeksforgeeks.org/user/yatishgot6d1f/",
+                    content: "https://www.geeksforgeeks.org/user/chintuvignu17/",
                     link: true,
                   },
                   {
                     icon: <MapPin className="w-6 h-6 text-pink-400" />,
                     title: "Location",
-                    content: "Chittoor, India",
+                    content: "Chittoor, AP, India",
                   },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start space-x-4">

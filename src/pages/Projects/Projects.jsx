@@ -4,64 +4,21 @@ import { useLocation } from "react-router-dom";
 
 const projects = [
   {
-    title: "GearUp – Full Stack Car Booking Web App",
-    description: "Built a full-stack Car Rental web app with booking system, dynamic pricing, and responsive dashboards using React, Node.js, and MongoDB",
-    img: "https://i.postimg.cc/d3YjmVn9/car-rental-bd.png",
+    title: "Crop Monitoring System",
+    description: "Led the development of a full-stack, IoT-enabled system for real-time agricultural monitoring. Built RESTful APIs using Flask to ensure seamless data flow between the frontend, backend, and IoT devices. Designed and implemented an intuitive user interface that boosted user engagement and accessibility. Deployed adaptive AI/ML algorithms to process user queries & deliver precise, actionable data from sensor inputs.",
+    img: "https://i.postimg.cc/d3YjmVn9/crop-monitoring.jpg", // Placeholder image
     color: "#38b718ff",
-    github: "https://github.com/yatish2026/GearUp",
-    live: "https://gear-up-alpha.vercel.app/",
+    github: "https://github.com/palavaladineshkumarreddy17/crop-monitoring-system",
+    live: "https://the-strivers.github.io/crop_monitoring_system/", // Replace with actual demo link when available
   },
   {
-    title: "Online Voting Platform",
-    description: "A decentralized, transparent, and secure blockchain voting platform built on Avalanche Fuji Testnet..",
-    img: "https://i.postimg.cc/15vs4MMg/Screenshot-2025-09-08-210108.png",
+    title: "Project Kisan",
+    description: "Architected and developed Project Kisan, an AI-powered smart farming assistant using Google Gemini, Vertex AI, and Firebase. Engineered features for crop disease detection, real-time mandi price updates, and government scheme guidance accessible via voice and image inputs. Designed a user-centric interface with multilingual support, offline capabilities, and personalized recommendations to cater to rural farmers.",
+    img: "https://i.postimg.cc/15vs4MMg/project-kisan.jpg", // Placeholder image
     color: "#d4cbd4ff",
-    github: "https://github.com/yatish2026/vote-fuji-flow",
-    live: "https://vote-fuji-flow.netlify.app/",
+    github: "https://github.com/palavaladineshkumarreddy17/project-kisan",
+    live: "https://projectkisanbheema.netlify.app", // Replace with actual demo link when available
   },
-  {
-    title: "Pathfinding Visualizer",
-    description: "Developed a Pathfinding Visualizer using Dijkstra’s and A algorithms with interactive UI in React for real-time grid-based route simulation.",
-    img: "https://i.postimg.cc/9f12jDwD/Screenshot-2025-07-31-171548.png",
-    color: "#d4cbd4ff",
-    github: "https://github.com/yatish2026/Pathfinder",
-    live: "https://yatish2026.github.io/Pathfinder/",
-  },
-
-  {
-    title: "Spotify Clone",
-    description: "A full-stack Spotify UI clone using React and Tailwind.",
-    img: "https://i.postimg.cc/133hr9jP/Screenshot-2025-07-31-171735.png",
-    color: "#8f89ff",
-    github: "https://github.com/yatish2026/spotify-clone",
-    live: "https://yatish2026.github.io/spotify-clone/",
-  },
-  {
-    title: "N-Queens Visualiser",
-    description: "JavaScript-based DSA visualisation for the N-Queens problem.",
-    img: "https://i.postimg.cc/6pVrn6fc/nqueens.jpg",
-    color: "#5196fd",
-    github: "https://github.com/yatish2026/N-Queens-Visualiser-DSA",
-    live: "https://yatish2026.github.io/N-Queens-Visualiser-DSA/",
-  },
-  {
-    title: "SwaRaksha_AI",
-    description: "AI-powered safety system with real-time alerts and tracking.",
-    img: "https://i.postimg.cc/cHQr4fpR/Annotation-2025-04-01-205350.png",
-    color: "#00ffaa",
-    github: "https://github.com/yatish2026/SwaRaksha_AI",
-
-  },
-  {
-    title: "Black Friday Sales",
-    description: "Data analysis dashboard built with Python and Plotly.",
-    img: "https://i.postimg.cc/cHQr4fpR/Annotation-2025-04-01-205350.png",
-    color: "#ed649e",
-    github: "https://github.com/yatish2026/BLACKFRIDAY-SALES_PROJECT-",
-    live: "https://github.com/yatish2026/BLACKFRIDAY-SALES_PROJECT-",
-  },
-
-
 ];
 
 const fadeInUp = {

@@ -1,4 +1,5 @@
 import React from "react";
+import "@/assets/css/Skills.css";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import IconCloudDemo from "@/components/globe";
@@ -73,12 +74,12 @@ const SkillsSection = () => {
       title: "Programming Languages",
       color: "text-blue-400",
       skills: [
-        { name: "Java", icon: <BsFileEarmarkCode className="w-4 h-4 text-[#f89820]" /> },
-        { name: "SQL", icon: <SiPostgresql className="w-4 h-4 text-[#336791]" /> },
         { name: "Python", icon: <FaPython className="w-4 h-4 text-[#3776AB]" /> },
         { name: "HTML", icon: <BsFileEarmarkCode className="w-4 h-4 text-[#E34F26]" /> },
         { name: "CSS", icon: <BsFileEarmarkCode className="w-4 h-4 text-[#1572B6]" /> },
         { name: "JavaScript", icon: <BsFileEarmarkCode className="w-4 h-4 text-yellow-400" /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" /> },
+        { name: "SQL", icon: <SiPostgresql className="w-4 h-4 text-[#336791]" /> },
       ],
     },
     {
@@ -86,23 +87,25 @@ const SkillsSection = () => {
       title: "Developer Tools",
       color: "text-green-400",
       skills: [
+        { name: "Git", icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" /> },
         { name: "GitHub", icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" /> },
         { name: "VS Code", icon: <TbBrandVscode className="w-4 h-4 text-[#007ACC]" /> },
-        { name: "Google Colab", icon: <FaPython className="w-4 h-4 text-[#F9AB00]" /> },
-        { name: "Jupyter Notebook", icon: <SiJest className="w-4 h-4 text-[#F37626]" /> },
+        { name: "Docker", icon: <FaDocker className="w-4 h-4 text-[#2496ED]" /> },
+        { name: "Render", icon: <FaAws className="w-4 h-4 text-orange-400" /> },
+        { name: "Vercel", icon: <SiVercel className="w-4 h-4 text-[#000000]" /> },
       ],
     },
     {
       icon: Cloud,
-      title: "Techstacks / Frameworks",
+      title: "Frameworks & Libraries",
       color: "text-purple-400",
       skills: [
-        { name: "MongoDB", icon: <SiMongodb className="w-4 h-4 text-[#47A248]" /> },
-        { name: "ExpressJs", icon: <SiGraphql className="w-4 h-4 text-[#000000]" /> },
-        { name: "ReactJs", icon: <FaReact className="w-4 h-4 text-[#61DAFB]" /> },
-        { name: "NodeJS", icon: <FaNodeJs className="w-4 h-4 text-[#339933]" /> },
-        { name: "Material UI", icon: <SiTypescript className="w-4 h-4 text-[#007FFF]" /> },
-        { name: "Tailwind CSS", icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" /> },
+        { name: "React.js", icon: <FaReact className="w-4 h-4 text-[#61DAFB]" /> },
+        { name: "Next.js", icon: <SiNextdotjs className="w-4 h-4 text-[#000000]" /> },
+        { name: "TypeScript", icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" /> },
+        { name: "Flask", icon: <FaPython className="w-4 h-4 text-[#000000]" /> },
+        { name: "Django", icon: <FaPython className="w-4 h-4 text-[#092E20]" /> },
+        { name: "REST APIs", icon: <SiGraphql className="w-4 h-4 text-[#E10098]" /> },
         { name: "Firebase", icon: <SiFirebase className="w-4 h-4 text-[#FFCA28]" /> },
       ],
     },
@@ -151,6 +154,41 @@ const SkillsSection = () => {
         { name: "Photography", icon: <FaCameraRetro className="w-4 h-4 text-rose-400" /> },
       ],
     },
+    {
+      icon: FaBrain,
+      title: "AI & Machine Learning",
+      color: "text-yellow-400",
+      skills: [
+        { name: "Gemini", icon: <FaBrain className="w-4 h-4 text-[#4285F4]" /> },
+        { name: "Vertex AI", icon: <FaBrain className="w-4 h-4 text-[#4285F4]" /> },
+        { name: "Hugging Face", icon: <FaBrain className="w-4 h-4 text-[#FFD43B]" /> },
+        { name: "Scikit-learn", icon: <FaBrain className="w-4 h-4 text-[#F7931E]" /> },
+        { name: "Pandas", icon: <FaBrain className="w-4 h-4 text-[#150458]" /> },
+        { name: "NumPy", icon: <FaBrain className="w-4 h-4 text-[#013243]" /> },
+      ],
+    },
+    {
+      icon: Cpu,
+      title: "IoT Technologies",
+      color: "text-cyan-400",
+      skills: [
+        { name: "Raspberry Pi", icon: <Cpu className="w-4 h-4 text-[#C51A4A]" /> },
+        { name: "MQTT", icon: <Cloud className="w-4 h-4 text-[#007ACC]" /> },
+        { name: "REST APIs", icon: <SiGraphql className="w-4 h-4 text-[#E10098]" /> },
+        { name: "Sensor Integration", icon: <Cpu className="w-4 h-4 text-[#7C4DFF]" /> },
+      ],
+    },
+    {
+      icon: Database,
+      title: "Databases",
+      color: "text-indigo-400",
+      skills: [
+        { name: "SQL", icon: <SiPostgresql className="w-4 h-4 text-[#336791]" /> },
+        { name: "MySQL", icon: <SiMongodb className="w-4 h-4 text-[#4479A1]" /> },
+        { name: "Firebase", icon: <SiFirebase className="w-4 h-4 text-[#FFCA28]" /> },
+        { name: "MongoDB", icon: <SiMongodb className="w-4 h-4 text-[#47A248]" /> },
+      ],
+    },
   ];
 
   return (
@@ -158,6 +196,16 @@ const SkillsSection = () => {
       {/* Grid Background */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
       <section className="container mx-auto px-4 py-11 relative z-10">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent mb-6">
+            Technical Interests
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            AI-Powered IoT Systems | Real-Time Monitoring | Cloud-Native Apps (GCP/Firebase) | Full-Stack Deployment | 
+            Smart Agriculture & Agri-Tech Innovation | Edge-to-Cloud Sensor Data Integration | Agentic AI |
+            Voice & Multimodal AI Interfaces
+          </p>
+        </div>
         <div className="flex justify-center items-center ">
           <IconCloudDemo />
         </div>
@@ -173,32 +221,7 @@ const SkillsSection = () => {
           ))}
         </div>
       </section>
-      <style jsx>{`
-        @keyframes shimmer {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-        .animate-shimmer {
-          animation: shimmer 2s infinite;
-        }
-        .bg-grid-pattern {
-          background-image: linear-gradient(
-              to right,
-              rgba(100, 100, 255, 0.1) 1px,
-              transparent 1px
-            ),
-            linear-gradient(
-              to bottom,
-              rgba(100, 100, 255, 0.1) 1px,
-              transparent 1px
-            );
-          background-size: 30px 30px;
-        }
-      `}</style>
+      
     </main>
   );
 };
